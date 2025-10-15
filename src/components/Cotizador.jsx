@@ -32,7 +32,7 @@ const Cotizador = () => {
     return (
         <Container className='container my-5'>
         {/* Encabezado DEMO */}
-        <div className="bg-info text-white p-3 text-center mb-4 rounded-3">
+        <div className="bg-info text-white p-3 text-center mb-4 rounded-3" id="cotizador">
             <h2 className="mb-0">
                 <span className="fw-bold">DEMO:</span> Cotizador de Componentes
             </h2>

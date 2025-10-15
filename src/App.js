@@ -1,6 +1,9 @@
 import './App.css';
 import NavbarPrincipal from './components/Navbar';
 import BannerPrincipal from './components/Banner';
+import Informacion from './components/Informacion';
+import Cotizador from './components/Cotizador';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -11,11 +14,12 @@ function App() {
       </header>
       
       <main>
-
+        <Informacion />
+        <Cotizador />
       </main>
 
       <footer>
-        <p>Derechos reservados &copy; 2025 PC ANDES</p>
+        <Footer />
       </footer>
     </div>
   );
