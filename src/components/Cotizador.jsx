@@ -3,11 +3,13 @@ import { Container, Row, Col, Form, Table } from 'react-bootstrap';
 import ButtonComponent from './Button';
 
 const Cotizador = () => {
-    const [precioCPU, setPrecioCPU]             = useState(0);
-    const [precioGPU, setPrecioGPU]             = useState(0);
-    const [cantidadModulos, setCantidadModulos] = useState(0);
-    const [garantia, setGarantia]               = useState(0);
-    const [descuento, setDescuento]             = useState(0);
+    
+    const [precioCPU,       setPrecioCPU]       = useState('');
+    const [precioGPU,       setPrecioGPU]       = useState('');
+    const [precioRAM,       setPrecioRAM]       = useState('');
+    const [cantidadModulos, setCantidadModulos] = useState('');
+    const [garantia,        setGarantia]        = useState(0);
+    const [descuento,       setDescuento]       = useState('');
 
     // Precios de garantía por año
     const preciosGarantia = {
@@ -22,15 +24,21 @@ const Cotizador = () => {
         return preciosGarantia[años] || 0;
     };
 
-    // Cálculos correctos (redondeados)
+    // Cálculos correctos (redondeados) - manejo de strings vacíos
     const precioGarantiaSeleccionada    = getPrecioGarantia(garantia);
-    const subtotal                      = Math.round(precioCPU + (precioGPU * cantidadModulos) + precioGarantiaSeleccionada);
+    const precioCPUNum                  = Number(precioCPU) || 0;
+    const precioGPUNum                  = Number(precioGPU) || 0;
+    const precioRAMNum                  = Number(precioRAM) || 0;
+    const cantidadModulosNum            = Number(cantidadModulos) || 0;
+    const descuentoNum                  = Number(descuento) || 0;
+    
+    const subtotal                      = Math.round(precioCPUNum + precioGPUNum + (precioRAMNum * cantidadModulosNum) + precioGarantiaSeleccionada);
     const iva                           = Math.round(subtotal * 0.19);
     const totalConIva                   = Math.round(subtotal + iva);
-    const total                         = Math.round(totalConIva - descuento);
+    const total                         = Math.round(totalConIva - descuentoNum);
 
     return (
-        <Container className='container my-5'>
+        <Container className='container'>
         {/* Encabezado DEMO */}
         <div className="bg-info text-white p-3 text-center mb-4 rounded-3" id="cotizador">
             <h2 className="mb-0">
@@ -38,7 +46,7 @@ const Cotizador = () => {
             </h2>
         </div>
 
-        <Row>
+        <Row className='my-5'>
             {/* Sección de entrada de datos (izquierda) */}
             <Col lg={6}>
                 <Form className='w-50 mx-auto'>
@@ -48,17 +56,27 @@ const Cotizador = () => {
                             type="number" 
                             placeholder="0"
                             value={precioCPU}
-                            onChange={(e) => setPrecioCPU(Number(e.target.value))}
+                            onChange={(e) => setPrecioCPU(e.target.value)}
                         />
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <Form.Label className='text-start'>Precio GPU (por módulo)</Form.Label>
+                        <Form.Label className='text-start'>Precio GPU</Form.Label>
                         <Form.Control 
                             type="number" 
                             placeholder="0"
                             value={precioGPU}
-                            onChange={(e) => setPrecioGPU(Number(e.target.value))}
+                            onChange={(e) => setPrecioGPU(e.target.value)}
+                        />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                        <Form.Label className='text-start'>Precio RAM (por módulo)</Form.Label>
+                        <Form.Control 
+                            type="number" 
+                            placeholder="0"
+                            value={precioRAM}
+                            onChange={(e) => setPrecioRAM(e.target.value)}
                         />
                     </Form.Group>
 
@@ -68,7 +86,7 @@ const Cotizador = () => {
                             type="number" 
                             placeholder="0"
                             value={cantidadModulos}
-                            onChange={(e) => setCantidadModulos(Number(e.target.value))}
+                            onChange={(e) => setCantidadModulos(e.target.value)}
                         />
                     </Form.Group>
 
@@ -88,17 +106,18 @@ const Cotizador = () => {
                             type="number" 
                             placeholder="0"
                             value={descuento}
-                            onChange={(e) => setDescuento(Number(e.target.value))}
+                            onChange={(e) => setDescuento(e.target.value)}
                         />
                     </Form.Group>
                 </Form>
                 <div className='text-center'>
                     <ButtonComponent text="Limpiar" onClick={() => {
-                        setPrecioCPU(0);
-                        setPrecioGPU(0);
-                        setCantidadModulos(0);
+                        setPrecioCPU('');
+                        setPrecioGPU('');
+                        setPrecioRAM('');
+                        setCantidadModulos('');
                         setGarantia(0);
-                        setDescuento(0);
+                        setDescuento('');
                     }}/>
                 </div>
             </Col>
@@ -139,6 +158,7 @@ const Cotizador = () => {
                 </Table>
             </Col>
         </Row>
+        <hr />
         </Container>
     );
 };

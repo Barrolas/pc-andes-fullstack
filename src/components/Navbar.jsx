@@ -2,9 +2,9 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 
 function NavbarPrincipal() {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary" fluid>
+        <Navbar expand="lg" className="bg-body-tertiary px-5 px-md-3 shadow-sm sticky-top" fluid>
             <Container fluid>
-                <Navbar.Brand href="#home" className='text-info'> <img className='logo' src="/pc-andes-logo.png" alt="logo" width={100} /> </Navbar.Brand>
+                <Navbar.Brand href="#home" className='text-info'> <img className='logo' src="/pc-andes-logo.png" alt="logo" width={120} /> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">

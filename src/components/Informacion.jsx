@@ -3,23 +3,24 @@ import { Container } from 'react-bootstrap';
 
 const Informacion = () => (
     <Container className='container my-5'>
-
-        <div className="row my-5">
-            <div className="col-lg-6">
-                <img src="/pc-andes-logo.png" alt="logo" width={512} />
+<hr />
+        <div className="row my-5 my-md-4 align-items-center">
+            <div className="col-lg-6 text-center mb-4 mb-lg-0">
+                <img src="/pc-andes-logo.png" alt="logo" width={512} className="img-fluid" />
             </div>
-            <div className="col-lg-6">
-                <h1 className='text-start text-info'>Misión y Visión</h1>
-                <p className='text-start'>
+            <div className="col-lg-6 py-3 py-md-4">
+                <h1 className='text-center text-info mb-4'>Misión y Visión</h1>
+                <p className='text-justify'>
                     PC Andes es una empresa chilena dedicada a la venta y distribución de componentes y accesorios para computadores. Fundada en 2018 en Temuco, comenzó como un emprendimiento universitario orientado a ofrecer asesoría tecnológica y productos de calidad a precios competitivos.
                     ser una empresa líder en la venta y distribución de componentes y accesorios para computadores, brindando soluciones tecnológicas de vanguardia a nuestros clientes.
                 </p>
             </div>
         </div>
+        <hr />
 
-        <div className="row my-5">
+        <div className="row my-5 my-md-4">
             <div className="col-lg-12">
-                <h2 className="text-info mb-4 text-start">Principales Productos</h2>
+                <h2 className="text-info mb-4 text-center">Principales Productos</h2>
                 <div className="row justify-content-center">
                     <div className="col-md-4 mb-3">
                         <div className="card h-100">
@@ -55,9 +56,10 @@ const Informacion = () => (
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
+        <hr />
     </Container>
 );
 
