@@ -11,21 +11,21 @@ function BannerPrincipal() {
                 <img
                     className="d-block w-100"
                     src={imageUrl1}
-                    alt="Banner PCFactory"
+                    alt="Banner 1"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
                     src={imageUrl2}
-                    alt="Banner PCFactory"
+                    alt="Banner 2"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
                     src={imageUrl3}
-                    alt="Banner PCFactory"
+                    alt="Banner 3"
                 />
             </Carousel.Item>
         </Carousel>
