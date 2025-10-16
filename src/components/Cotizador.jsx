@@ -147,7 +147,7 @@ const Cotizador = () => {
                         <tr>
                             <td className="text-center">3</td>
                             <td>Descuento</td>
-                            <td className="text-end">-${descuento.toLocaleString('es-CL')}</td>
+                            <td className="text-end">-${descuentoNum.toLocaleString('es-CL')}</td>
                         </tr>
                         <tr className="fw-bold">
                             <td className="text-center">4</td>

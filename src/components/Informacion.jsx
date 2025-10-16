@@ -20,43 +20,92 @@ const Informacion = () => (
 
         <div className="row my-5 my-md-4">
             <div className="col-lg-12">
-                <h2 className="text-info mb-4 text-center">Principales Productos</h2>
+                <h2 className="text-info mb-4 text-center">Productos Destacados</h2>
                 <div className="row justify-content-center">
-                    <div className="col-md-4 mb-3">
-                        <div className="card h-100">
-                            <img src="https://cdn-icons-png.flaticon.com/512/4290/4290854.png" className="card-img-top p-4" alt="Procesadores" style={{ height: '200px', objectFit: 'contain' }} />
-                            <div className="card-body">
-                                <h5 className="card-title text-center text-info">Procesadores</h5>
-                                <p className="card-text text-center">
-                                    Amplia selección de procesadores modernos para potenciar el rendimiento de tu computador, ideales para gaming, diseño o trabajo profesional.
+                    {/* Producto 1 */}
+                    <div className="col-md-4 col-sm-6 mb-4">
+                        <div className="card h-100 shadow-sm">
+                            <img 
+                                src="https://sipoonline.cl/wp-content/uploads/2022/10/Procesador-AMD-Ryzen-7-5700X-AM4-8-Cores-16-Hilos-3.44.6GHz-Sin-Disipador-1.png" 
+                                className="card-img-top" 
+                                alt="Procesador AMD Ryzen 7 5800X" 
+                                style={{ objectFit: 'contain', height: '250px', padding: '20px' }} 
+                            />
+                            <div className="card-body d-flex flex-column">
+                                <h5 className="card-title">Procesador AMD Ryzen 7 5800X</h5>
+                                <p className="card-text text-muted small">
+                                    Procesador de alto rendimiento con 8 núcleos y 16 hilos
                                 </p>
+                                <div className="mt-auto">
+                                    <div className="d-flex justify-content-between align-items-center mb-3">
+                                        <span className="text-muted small text-decoration-line-through">$450.000</span>
+                                        <h4 className="text-info mb-0">$389.990</h4>
+                                    </div>
+                                    <button className="btn btn-info w-100 text-white">
+                                        <i className="fas fa-shopping-cart me-2"></i>
+                                        Agregar al Carrito
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4 mb-3">
-                        <div className="card h-100">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2345/2345336.png" className="card-img-top p-4" alt="Memorias RAM" style={{ height: '200px', objectFit: 'contain' }} />
-                            <div className="card-body">
-                                <h5 className="card-title text-center text-info">Memorias RAM</h5>
-                                <p className="card-text text-center">
-                                    Memorias RAM de diversas capacidades y velocidades para optimizar el rendimiento multitarea y la rapidez de tu equipo.
+
+                    {/* Producto 2 */}
+                    <div className="col-md-4 col-sm-6 mb-4">
+                        <div className="card h-100 shadow-sm">
+                            <img 
+                                src="https://images-na.ssl-images-amazon.com/images/I/61wCOVcyvFL.jpg" 
+                                className="card-img-top" 
+                                alt="Memoria RAM Corsair 32GB DDR4" 
+                                style={{ objectFit: 'contain', height: '250px', padding: '20px' }} 
+                            />
+                            <div className="card-body d-flex flex-column">
+                                <h5 className="card-title">Memoria RAM Corsair 32GB DDR4</h5>
+                                <p className="card-text text-muted small">
+                                    Kit de 2x16GB 3200MHz RGB para gaming
                                 </p>
+                                <div className="mt-auto">
+                                    <div className="d-flex justify-content-between align-items-center mb-3">
+                                        <span className="text-muted small text-decoration-line-through">$180.000</span>
+                                        <h4 className="text-info mb-0">$149.990</h4>
+                                    </div>
+                                    <button className="btn btn-info w-100 text-white">
+                                        <i className="fas fa-shopping-cart me-2"></i>
+                                        Agregar al Carrito
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4 mb-3">
-                        <div className="card h-100">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1278/1278604.png" className="card-img-top p-4" alt="SSD NVMe" style={{ height: '200px', objectFit: 'contain' }} />
-                            <div className="card-body">
-                                <h5 className="card-title text-center text-info">Discos SSD NVMe</h5>
-                                <p className="card-text text-center">
-                                    Discos de almacenamiento SSD NVMe, ultrarrápidos y confiables, que elevan la velocidad de carga y transferencia de tus datos.
+
+                    {/* Producto 3 */}
+                    <div className="col-md-4 col-sm-6 mb-4">
+                        <div className="card h-100 shadow-sm">
+                            <img 
+                                src="https://tecnosistec.cl/4807-thickbox_default/disco-ssd-samsung-ssd-980-1tb-nvme-m2-mz-v8v1t0bw.jpg" 
+                                className="card-img-top" 
+                                alt="SSD Samsung 980 PRO 1TB NVMe" 
+                                style={{ objectFit: 'contain', height: '250px', padding: '20px' }} 
+                            />
+                            <div className="card-body d-flex flex-column">
+                                <h5 className="card-title">SSD Samsung 980 PRO 1TB NVMe</h5>
+                                <p className="card-text text-muted small">
+                                    Velocidades de lectura hasta 7000 MB/s
                                 </p>
+                                <div className="mt-auto">
+                                    <div className="d-flex justify-content-between align-items-center mb-3">
+                                        <span className="text-muted small text-decoration-line-through">$220.000</span>
+                                        <h4 className="text-info mb-0">$189.990</h4>
+                                    </div>
+                                    <button className="btn btn-info w-100 text-white">
+                                        <i className="fas fa-shopping-cart me-2"></i>
+                                        Agregar al Carrito
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <hr />
